@@ -1,23 +1,25 @@
 import 'package:login_bp/features/login/interfaces/i_auth_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:login_bp/features/commons/models/auth_token_model.dart';
-import 'package:login_bp/features/login/models/login_page_model.dart';
+import 'package:login_bp/features/login/models/login_data_model.dart';
 import 'package:login_bp/network/connectors/network_connector.dart';
 import 'package:login_bp/network/interfaces/i_network_connector.dart';
 
-final loginRepositoryProvider = Provider<IAuthRepository>((ref) {
+final loginRepositoryProvider =
+    Provider<IAuthRepository<LoginDataModel, AuthTokenModel>>((ref) {
   final connector = ref.read(networkConnectorProvider);
   return AuthRepository(connector: connector, ref: ref);
 });
 
-class AuthRepository implements IAuthRepository<LoginModel, AuthTokenModel> {
+class AuthRepository
+    implements IAuthRepository<LoginDataModel, AuthTokenModel> {
   final INetworkConnector connector;
   final Ref ref;
 
   AuthRepository({required this.connector, required this.ref});
 
   @override
-  Future<AuthTokenModel> login(LoginModel data) async {
+  Future<AuthTokenModel> login(LoginDataModel data) async {
     final response = await connector.post<Map<String, dynamic>>(
       "/auth/login",
       body: data.toJson(),

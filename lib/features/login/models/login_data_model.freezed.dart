@@ -12,8 +12,7 @@ part of 'login_data_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 LoginDataModel _$LoginDataModelFromJson(Map<String, dynamic> json) {
   return _LoginDataModel.fromJson(json);
@@ -21,8 +20,8 @@ LoginDataModel _$LoginDataModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LoginDataModel {
-  String? get emailErrorText => throw _privateConstructorUsedError;
-  String? get pwdErrorText => throw _privateConstructorUsedError;
+  String? get emailText => throw _privateConstructorUsedError;
+  String? get pwdText => throw _privateConstructorUsedError;
 
   /// Serializes this LoginDataModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -37,11 +36,10 @@ mixin _$LoginDataModel {
 /// @nodoc
 abstract class $LoginDataModelCopyWith<$Res> {
   factory $LoginDataModelCopyWith(
-    LoginDataModel value,
-    $Res Function(LoginDataModel) then,
-  ) = _$LoginDataModelCopyWithImpl<$Res, LoginDataModel>;
+          LoginDataModel value, $Res Function(LoginDataModel) then) =
+      _$LoginDataModelCopyWithImpl<$Res, LoginDataModel>;
   @useResult
-  $Res call({String? emailErrorText, String? pwdErrorText});
+  $Res call({String? emailText, String? pwdText});
 }
 
 /// @nodoc
@@ -59,35 +57,31 @@ class _$LoginDataModelCopyWithImpl<$Res, $Val extends LoginDataModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? emailErrorText = freezed,
-    Object? pwdErrorText = freezed,
+    Object? emailText = freezed,
+    Object? pwdText = freezed,
   }) {
-    return _then(
-      _value.copyWith(
-            emailErrorText: freezed == emailErrorText
-                ? _value.emailErrorText
-                : emailErrorText // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            pwdErrorText: freezed == pwdErrorText
-                ? _value.pwdErrorText
-                : pwdErrorText // ignore: cast_nullable_to_non_nullable
-                      as String?,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      emailText: freezed == emailText
+          ? _value.emailText
+          : emailText // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pwdText: freezed == pwdText
+          ? _value.pwdText
+          : pwdText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$LoginDataModelImplCopyWith<$Res>
     implements $LoginDataModelCopyWith<$Res> {
-  factory _$$LoginDataModelImplCopyWith(
-    _$LoginDataModelImpl value,
-    $Res Function(_$LoginDataModelImpl) then,
-  ) = __$$LoginDataModelImplCopyWithImpl<$Res>;
+  factory _$$LoginDataModelImplCopyWith(_$LoginDataModelImpl value,
+          $Res Function(_$LoginDataModelImpl) then) =
+      __$$LoginDataModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? emailErrorText, String? pwdErrorText});
+  $Res call({String? emailText, String? pwdText});
 }
 
 /// @nodoc
@@ -95,54 +89,48 @@ class __$$LoginDataModelImplCopyWithImpl<$Res>
     extends _$LoginDataModelCopyWithImpl<$Res, _$LoginDataModelImpl>
     implements _$$LoginDataModelImplCopyWith<$Res> {
   __$$LoginDataModelImplCopyWithImpl(
-    _$LoginDataModelImpl _value,
-    $Res Function(_$LoginDataModelImpl) _then,
-  ) : super(_value, _then);
+      _$LoginDataModelImpl _value, $Res Function(_$LoginDataModelImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LoginDataModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? emailErrorText = freezed,
-    Object? pwdErrorText = freezed,
+    Object? emailText = freezed,
+    Object? pwdText = freezed,
   }) {
-    return _then(
-      _$LoginDataModelImpl(
-        emailErrorText: freezed == emailErrorText
-            ? _value.emailErrorText
-            : emailErrorText // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        pwdErrorText: freezed == pwdErrorText
-            ? _value.pwdErrorText
-            : pwdErrorText // ignore: cast_nullable_to_non_nullable
-                  as String?,
-      ),
-    );
+    return _then(_$LoginDataModelImpl(
+      emailText: freezed == emailText
+          ? _value.emailText
+          : emailText // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pwdText: freezed == pwdText
+          ? _value.pwdText
+          : pwdText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$LoginDataModelImpl implements _LoginDataModel {
-  const _$LoginDataModelImpl({
-    this.emailErrorText = null,
-    this.pwdErrorText = null,
-  });
+  const _$LoginDataModelImpl({this.emailText = null, this.pwdText = null});
 
   factory _$LoginDataModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$LoginDataModelImplFromJson(json);
 
   @override
   @JsonKey()
-  final String? emailErrorText;
+  final String? emailText;
   @override
   @JsonKey()
-  final String? pwdErrorText;
+  final String? pwdText;
 
   @override
   String toString() {
-    return 'LoginDataModel(emailErrorText: $emailErrorText, pwdErrorText: $pwdErrorText)';
+    return 'LoginDataModel(emailText: $emailText, pwdText: $pwdText)';
   }
 
   @override
@@ -150,15 +138,14 @@ class _$LoginDataModelImpl implements _LoginDataModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginDataModelImpl &&
-            (identical(other.emailErrorText, emailErrorText) ||
-                other.emailErrorText == emailErrorText) &&
-            (identical(other.pwdErrorText, pwdErrorText) ||
-                other.pwdErrorText == pwdErrorText));
+            (identical(other.emailText, emailText) ||
+                other.emailText == emailText) &&
+            (identical(other.pwdText, pwdText) || other.pwdText == pwdText));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, emailErrorText, pwdErrorText);
+  int get hashCode => Object.hash(runtimeType, emailText, pwdText);
 
   /// Create a copy of LoginDataModel
   /// with the given fields replaced by the non-null parameter values.
@@ -167,29 +154,27 @@ class _$LoginDataModelImpl implements _LoginDataModel {
   @pragma('vm:prefer-inline')
   _$$LoginDataModelImplCopyWith<_$LoginDataModelImpl> get copyWith =>
       __$$LoginDataModelImplCopyWithImpl<_$LoginDataModelImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$LoginDataModelImplToJson(this);
+    return _$$LoginDataModelImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _LoginDataModel implements LoginDataModel {
-  const factory _LoginDataModel({
-    final String? emailErrorText,
-    final String? pwdErrorText,
-  }) = _$LoginDataModelImpl;
+  const factory _LoginDataModel(
+      {final String? emailText, final String? pwdText}) = _$LoginDataModelImpl;
 
   factory _LoginDataModel.fromJson(Map<String, dynamic> json) =
       _$LoginDataModelImpl.fromJson;
 
   @override
-  String? get emailErrorText;
+  String? get emailText;
   @override
-  String? get pwdErrorText;
+  String? get pwdText;
 
   /// Create a copy of LoginDataModel
   /// with the given fields replaced by the non-null parameter values.

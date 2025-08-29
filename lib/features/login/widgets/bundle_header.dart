@@ -9,25 +9,19 @@ class LoginBundleHeader extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        McAppear(
-          delayMs: 200,
-          child: Text(
-            '마챗에 오신걸',
-            style: TextStyle(
-                color: MCColors.$color_blue_70,
-                fontSize: 24,
-                fontWeight: FontWeight.bold),
-          ),
+        Text(
+          '환영합니다',
+          style: TextStyle(
+              color: MCColors.$color_blue_70,
+              fontSize: 24,
+              fontWeight: FontWeight.bold),
         ),
-        McAppear(
-          delayMs: 600,
-          child: Text(
-            '환영합니다',
-            style: TextStyle(
-                color: MCColors.$color_blue_70,
-                fontSize: 24,
-                fontWeight: FontWeight.bold),
-          ),
+        Text(
+          '로그인 하시겠습니까?',
+          style: TextStyle(
+              color: MCColors.$color_blue_70,
+              fontSize: 24,
+              fontWeight: FontWeight.bold),
         ),
       ],
     );

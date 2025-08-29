@@ -1,12 +1,17 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:login_bp/storage/interfaces/i_storage.dart';
 import 'dart:convert';
+
+final secureStorageServiceProvider = Provider<IStorage>((ref) {
+  return SecureStorageService();
+});
 
 class SecureStorageService implements IStorage {
   final FlutterSecureStorage _storage;
 
   SecureStorageService({FlutterSecureStorage? storage})
-    : _storage = storage ?? const FlutterSecureStorage();
+      : _storage = storage ?? const FlutterSecureStorage();
 
   @override
   Future<void> write(String key, String value) async {

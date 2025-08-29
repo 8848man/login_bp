@@ -6,8 +6,8 @@ part 'login_data_model.g.dart';
 @freezed
 class LoginDataModel with _$LoginDataModel {
   const factory LoginDataModel({
-    @Default(null) String? emailErrorText,
-    @Default(null) String? pwdErrorText,
+    @Default(null) String? emailText,
+    @Default(null) String? pwdText,
   }) = _LoginDataModel;
 
   factory LoginDataModel.fromJson(Map<String, dynamic> json) =>

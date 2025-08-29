@@ -6,7 +6,7 @@ class LoginBundleBody extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final LoginViewModel notifier = ref.read(loginViewModelProvider.notifier);
-    final LoginModel state = ref.watch(loginViewModelProvider);
+    final LoginPageModel state = ref.watch(loginViewModelProvider);
     return Column(
       children: [
         inputEmailField(state, notifier),
@@ -16,7 +16,7 @@ class LoginBundleBody extends ConsumerWidget {
     );
   }
 
-  Widget inputEmailField(LoginModel state, LoginViewModel notifier) {
+  Widget inputEmailField(LoginPageModel state, LoginViewModel notifier) {
     return MCTextInput(
       controller: notifier.emailController,
       labelText: '이메일',
@@ -25,7 +25,7 @@ class LoginBundleBody extends ConsumerWidget {
     );
   }
 
-  Widget inputPwdField(LoginModel state, LoginViewModel notifier) {
+  Widget inputPwdField(LoginPageModel state, LoginViewModel notifier) {
     return MCTextInput(
       controller: notifier.pwdController,
       labelText: '비밀번호',
